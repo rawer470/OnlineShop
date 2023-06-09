@@ -1,0 +1,122 @@
+﻿<Window x:Class="OnlineShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1500" >
+    <TabControl >
+        <TabItem Visibility="Collapsed" Name="MainPage" IsSelected="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--#region -->
+                <StackPanel Orientation="Horizontal" >
+                    <Button Name="Catalog" Width="80" Height="80" Margin="10" Background="White" BorderBrush="White" Click="GoCatalog">
+                        <StackPanel>
+                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Cato.png" />
+                        </StackPanel>
+                    </Button>
+
+                    <TextBox Width="600" Height="55" Margin="20" BorderThickness="5" BorderBrush="Black" FontSize="30">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Button Width="250"  Height="50" Margin="20" Background="Yellow" BorderBrush="Black" BorderThickness="3" Content="Найти" FontSize="30">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <!-- Закруглить края-->
+                                <Setter Property="CornerRadius" Value="15"  />
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Name="Product" Width="73" Height="75" >
+                        <Image.Source>
+                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Product.png"/>
+                        </Image.Source>
+                    </Image >
+                    <Image Name="Loves" Width="80" Height="70">
+                        <Image.Source>
+                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Loves.png"/>
+                        </Image.Source>
+                    </Image >
+                    <Image Name="Korzina" Width="80" Height="70">
+                        <Image.Source>
+                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Korzina.png"/>
+                        </Image.Source>
+                    </Image >
+                    <Image Name="Profile" Width="80" Height="70">
+                        <Image.Source>
+                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Profile.png"/>
+                        </Image.Source>
+                    </Image >
+                </StackPanel>
+                <!--#endregion-->
+                <!--Дизайн верх-->
+                
+            </Grid>
+        </TabItem>
+
+        <TabItem Visibility="Collapsed" Name="CatalogPage"  IsSelected="False">
+            <ScrollViewer x:Name="scroll" HorizontalScrollBarVisibility="Visible" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Width="200" Height="60"  Click="GoMainPage" HorizontalAlignment="Left" Content="Go Back" FontSize="30" Margin="10"/>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+                   
+                    <Button Width="350" Height="400" Margin="20" Click="ElectronicPage" >
+                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Electronics.png"/>
+                        </Button>
+                    <Button Width="350" Height="400" Margin="20" >
+                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Jewelery.png"/>
+                        </Button>
+                    <Button Width="350" Height="400" Margin="20"  >
+                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Men`s.png"/>
+                        </Button>
+                    <Button Width="350" Height="400" Margin="20" >
+                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Woman`s.png"/>
+                        </Button>
+                    <Button Width="350" Height="400" Margin="20" >
+
+                    </Button>
+                </StackPanel>
+                </Grid>
+            </ScrollViewer>
+                
+        </TabItem>
+        <TabItem Visibility="Collapsed" Name="ElectronicsPage">
+            <ScrollViewer HorizontalScrollBarVisibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Width="200" Height="60"  Click="GoCatalog" HorizontalAlignment="Left" Content="Go Back" FontSize="30" Margin="10"  />
+                    <WrapPanel Name="Electronics" Grid.Row="1">
+                        <Button Grid.Row="1" Width="400" Height="500" Margin="40" Name="Elecronic1" >
+                            <WrapPanel  Orientation="Vertical">
+
+                                <Image Width="280" Height="200" Margin="10"/>
+                                <Label Content="Price" FontSize="25"/>
+                                <Label Content="Rating:" FontSize="16"/>
+                                <Label Content="Title:" FontSize="20"/>
+                                <Label Content="Description:" FontSize="16"/>
+                                <Button Name="ButtonKorzina" Height="55" Width="390" Content="В корзину" FontSize="25" Background="Yellow" />
+                            </WrapPanel>
+                        </Button>
+                    </WrapPanel>
+                </Grid>
+            </ScrollViewer>
+        </TabItem>
+    </TabControl>
+</Window>
