@@ -16,7 +16,7 @@
                 <StackPanel Orientation="Horizontal" >
                     <Button Name="Catalog" Width="80" Height="80" Margin="10" Background="White" BorderBrush="White" Click="GoCatalog">
                         <StackPanel>
-                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Cato.png" />
+                            <Image Source="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Cato.png"/>
                         </StackPanel>
                     </Button>
 
@@ -39,22 +39,22 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Image Name="Product" Width="73" Height="75" >
                         <Image.Source>
-                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Product.png"/>
+                            <BitmapImage  UriSource="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Product.png"/>
                         </Image.Source>
                     </Image >
                     <Image Name="Loves" Width="80" Height="70">
                         <Image.Source>
-                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Loves.png"/>
+                            <BitmapImage  UriSource="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Loves.png"/>
                         </Image.Source>
                     </Image >
                     <Image Name="Korzina" Width="80" Height="70">
                         <Image.Source>
-                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Korzina.png"/>
+                            <BitmapImage  UriSource="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Korzina.png"/>
                         </Image.Source>
                     </Image >
                     <Image Name="Profile" Width="80" Height="70">
                         <Image.Source>
-                            <BitmapImage  UriSource="C:/Users/timon/Documents/GitHub/AsyncAwait_Lesson_3M/OnlineShop/OnlineShop/Image/Profile.png"/>
+                            <BitmapImage  UriSource="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Profile.png"/>
                         </Image.Source>
                     </Image >
                 </StackPanel>
@@ -75,16 +75,16 @@
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
                    
                     <Button Width="350" Height="400" Margin="20" Click="ElectronicPage" >
-                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Electronics.png"/>
+                            <Image Source="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Electronics.png"/>
                         </Button>
-                    <Button Width="350" Height="400" Margin="20" >
-                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Jewelery.png"/>
+                        <Button Width="350" Height="400" Margin="20" Click="GoJeweleryPage" >
+                            <Image Source="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Jewelery.png"/>
                         </Button>
-                    <Button Width="350" Height="400" Margin="20"  >
-                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Men`s.png"/>
+                    <Button Width="350" Height="400" Margin="20" Click="GoMensPage" >
+                            <Image Source="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Men`s.png"/>
                         </Button>
-                    <Button Width="350" Height="400" Margin="20" >
-                            <Image Source="C:\Users\timon\Documents\GitHub\AsyncAwait_Lesson_3M\OnlineShop\OnlineShop\Image\Woman`s.png"/>
+                    <Button Width="350" Height="400" Margin="20" Click="GoWomenPage" >
+                            <Image Source="C:\Users\timon\source\repos\OnlineShop\OnlineShop\Image\Woman`s.png"/>
                         </Button>
                     <Button Width="350" Height="400" Margin="20" >
 
@@ -95,14 +95,14 @@
                 
         </TabItem>
         <TabItem Visibility="Collapsed" Name="ElectronicsPage">
-            <ScrollViewer HorizontalScrollBarVisibility="Visible">
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="80"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button Width="200" Height="60"  Click="GoCatalog" HorizontalAlignment="Left" Content="Go Back" FontSize="30" Margin="10"  />
-                    <WrapPanel Name="Electronics" Grid.Row="1">
+                    <WrapPanel Name="Electronics" Orientation="Horizontal" Grid.Row="1">
                         <Button Grid.Row="1" Width="400" Height="500" Margin="40" Name="Elecronic1" >
                             <WrapPanel  Orientation="Vertical">
 
@@ -115,6 +115,44 @@
                             </WrapPanel>
                         </Button>
                     </WrapPanel>
+                </Grid>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Visibility="Collapsed" Name="JeweleryPage">
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Width="200" Height="60"  Click="GoCatalog" HorizontalAlignment="Left" Content="Go Back" FontSize="30" Margin="10"  />
+                    <WrapPanel Name="Jewelerys" Orientation="Horizontal" Grid.Row="1"/>
+                </Grid>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Visibility="Collapsed" Name="MensPage">
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Width="200" Height="60"  Click="GoCatalog" HorizontalAlignment="Left" Content="Go Back" FontSize="30" Margin="10"  />
+                    <WrapPanel Name="Mens" Orientation="Horizontal" Grid.Row="1"/>
+                </Grid>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Visibility="Collapsed" Name="WomensPage">
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Width="200" Height="60"  Click="GoCatalog" HorizontalAlignment="Left" Content="Go Back" FontSize="30" Margin="10"  />
+                    <WrapPanel Name="Womens" Orientation="Horizontal" Grid.Row="1"/>
                 </Grid>
             </ScrollViewer>
         </TabItem>
