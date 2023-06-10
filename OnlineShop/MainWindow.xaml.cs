@@ -72,6 +72,7 @@ namespace OnlineShop
         }
         private async void ElectronicPage(object sender, RoutedEventArgs e)
         {
+           
             ElectronicsPage.IsSelected = true;
             MainPage.IsSelected = false;
             CatalogPage.IsSelected = false;
@@ -84,7 +85,6 @@ namespace OnlineShop
                 Electronics.Children.Add(LoadPage.LoadProductButton(elecronics[i]));
             }
         }
-
         private void GoJeweleryPage(object sender, RoutedEventArgs e)
         {
             ElectronicsPage.IsSelected = false;
@@ -99,7 +99,6 @@ namespace OnlineShop
                 Jewelerys.Children.Add(LoadPage.LoadProductButton(jewelery[i]));
             }
         }
-
         private void GoMensPage(object sender, RoutedEventArgs e)
         {
             ElectronicsPage.IsSelected = false;
@@ -114,7 +113,6 @@ namespace OnlineShop
                 Mens.Children.Add(LoadPage.LoadProductButton(mensClothing[i]));
             }
         }
-
         private void GoWomenPage(object sender, RoutedEventArgs e)
         {
             ElectronicsPage.IsSelected = false;
@@ -129,5 +127,7 @@ namespace OnlineShop
                 Womens.Children.Add(LoadPage.LoadProductButton(WomansClothing[i]));
             }
         }
+
+    
     }
 }

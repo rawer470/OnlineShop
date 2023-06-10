@@ -63,9 +63,9 @@ namespace OnlineShop.Classes
 
             //Добавление описания
             TextBlock labelDiscr = new TextBlock();
-            if (product.Description.Length>75)
+            if (product.Description.Length>90)
             {
-                string Dis = Microsoft.VisualBasic.Strings.Left(product.Description, 75);
+                string Dis = $"{Microsoft.VisualBasic.Strings.Left(product.Description, 90)}...";
                 labelDiscr.Text = Dis;
             }
             else
