@@ -72,7 +72,7 @@ namespace OnlineShop
         }
         private async void ElectronicPage(object sender, RoutedEventArgs e)
         {
-           
+
             ElectronicsPage.IsSelected = true;
             MainPage.IsSelected = false;
             CatalogPage.IsSelected = false;
@@ -120,7 +120,7 @@ namespace OnlineShop
             CatalogPage.IsSelected = false;
             JeweleryPage.IsSelected = false;
             MensPage.IsSelected = false;
-            WomensPage.IsSelected= true;
+            WomensPage.IsSelected = true;
             Womens.Children.Clear();
             for (int i = 0; i < WomansClothing.Count; i++)
             {
@@ -128,6 +128,10 @@ namespace OnlineShop
             }
         }
 
-    
+        private async void StartSearch(object sender, RoutedEventArgs e)
+        {
+            List<Product> products =await ProductProcessor.FromTitle(Search.Text);
+
+        }
     }
 }
