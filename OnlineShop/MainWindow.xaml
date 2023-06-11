@@ -60,8 +60,15 @@
                 </StackPanel>
                 <!--#endregion-->
                 <!--Дизайн верх-->
+
                 <ScrollViewer Grid.Row="1">
-                    <StackPanel Grid.Row="1">
+                    <WrapPanel Orientation="Horizontal" Name="MainSearch" Grid.Row="1">
+
+                    </WrapPanel>
+                </ScrollViewer>
+
+                <ScrollViewer Grid.Row="1">
+                    <StackPanel Name="MainLogic"  Grid.Row="1">
                         <Grid>
                             <Label Content="Electronics" FontSize="30" Margin="40 0 0 0"/>
                             <StackPanel Orientation="Horizontal" Width="1400" Height="250" Name="ElMain" >
