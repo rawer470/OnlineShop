@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineShop
+namespace OnlineShop.Classes
 {
     public static class ProductProcessor
     {
@@ -52,8 +52,8 @@ namespace OnlineShop
             using (HttpResponseMessage response = await client.GetAsync(url))
             {
                 string responceString = await response.Content.ReadAsStringAsync();
-               Product[] product = JsonConvert.DeserializeObject<Product[]>(responceString);
-                return product.ToList<Product>();
+                Product[] product = JsonConvert.DeserializeObject<Product[]>(responceString);
+                return product.ToList();
             }
         }
     }

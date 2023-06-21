@@ -26,11 +26,11 @@ namespace OnlineShop
 
     public partial class MainWindow : Window
     {
-        public int scrolll = 0;
         private List<Product> elecronics;
         private List<Product> jewelery;
         private List<Product> mensClothing;
         private List<Product> WomansClothing;
+        private List<User> users;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,12 +38,9 @@ namespace OnlineShop
             LoadPage.ObrazecProduct = Elecronic1;
             LoadPage.Korzina = ButtonKorzina;
 
-
+            LoadUsers();
         }
-
-
-
-        public async void LoadProduct()
+        private async void LoadProduct()
         {
             elecronics = await ProductProcessor.GetFromCategory("electronics");
             jewelery = await ProductProcessor.GetFromCategory("jewelery");
@@ -91,6 +88,11 @@ namespace OnlineShop
                 image.Margin = new Thickness(10);
                 WomenMain.Children.Add(image);
             }
+        }
+
+        private async void LoadUsers()
+        {
+         users =(await UserProcessor.GetAllUsersAsync()).ToList<User>();
         }
 
 
@@ -161,7 +163,7 @@ namespace OnlineShop
         }
         private void GoWomenPage(object sender, RoutedEventArgs e)
         {
-          
+
             ElectronicsPage.IsSelected = false;
             MainPage.IsSelected = false;
             CatalogPage.IsSelected = false;
@@ -176,14 +178,14 @@ namespace OnlineShop
         }
 
         private async void StartSearch(object sender, RoutedEventArgs e)
-        {  
+        {
             if (Search.Text != "")
             {
                 MainLogic.Visibility = Visibility.Collapsed;
                 MainSearch.Visibility = Visibility.Visible;
                 MainSearch.Children.Clear();
                 List<Product> products = await ProductProcessor.FromTitle(Search.Text);
-                if (products.Count!=0)
+                if (products.Count != 0)
                 {
                     for (int i = 0; i < products.Count; i++)
                     {
@@ -192,7 +194,7 @@ namespace OnlineShop
                 }
                 else
                 {
-                    Label label= new Label();
+                    Label label = new Label();
                     label.FontSize = 40;
                     label.Background = Brushes.DarkGray;
                     label.Content = "Ничего не нашлось.  :(";
